@@ -9,7 +9,7 @@ const translations = {
     'nav-contact': 'კონტაქტი',
 
     'hero-title': 'მიწის ნაკვეთები და კოტეჯების მშენებლობა საქართველოში',
-    'hero-text': 'დაგეხმარებით მიწის ნაკვეთების შერჩევაში და თანამედროვე კოტეჯების Ashenebashi.',
+    'hero-text': 'დაგეხმარებით მიწის ნაკვეთების შერჩევაში და თანამედროვე კოტეჯების აშენებაში.',
 
     'buy-title': 'როგორ ხდება ნაკვეთის შეძენა საქართველოში?',
     'buy-text-1': 'უცხოელებსაც და ქართველებსაც შეუძლიათ მიწის ყიდვა მარტივად.',
@@ -156,3 +156,4 @@ window.addEventListener("scroll", () => {
   if (window.scrollY > 80) header.classList.add("scrolled");
   else header.classList.remove("scrolled");
 });
+

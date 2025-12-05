@@ -252,27 +252,40 @@ footer {
 
 @media (max-width: 768px) {
 
-    /* HERO */
-    .hero h1 {
-        font-size: 28px;
+    /* HEADER უფრო კომპაქტური */
+    .glass-header {
+        padding: 8px 0;
     }
 
-    .hero p {
-        font-size: 16px;
-        margin-top: 10px;
-    }
-
-    /* NAVIGATION → გადამტან მობილურისთვის */
     .header-container {
         flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
+        align-items: stretch;
+        gap: 6px;
     }
 
+    /* ლოგო */
+    .header-logo {
+        padding-left: 16px;
+    }
+
+    .header-logo span {
+        font-size: 22px;
+    }
+
+    /* ენების ჩამოსაშლელი – ზედა მარჯვენა კუთხეში */
+    .lang-dropdown {
+        align-self: flex-end;
+        margin-right: 16px;
+    }
+
+    /* ნავიგაცია – ლამაზად ცენტრში, პატარა პილები */
     .header-nav {
+        order: 2;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
+        padding: 0 8px;
     }
 
     .header-nav a {
@@ -281,17 +294,17 @@ footer {
         border-radius: 20px;
     }
 
-    /* LANGUAGE SELECT */
-    .lang-dropdown {
-        margin-right: 0;
+    /* HERO ტექსტი – ტელეფონზე პატარა, მაგრამ მკაფიო */
+    .hero h1 {
+        font-size: 26px;
     }
 
-    /* LOGO */
-    .header-logo span {
-        font-size: 22px;
+    .hero p {
+        font-size: 15px;
+        margin-top: 10px;
     }
 
-    /* SECTION PADDING */
+    /* სექციების შიგთავსი */
     .section {
         padding: 40px 0;
     }
@@ -305,3 +318,5 @@ footer {
         font-size: 14px;
     }
 }
+
+

@@ -252,68 +252,39 @@ footer {
 
 @media (max-width: 768px) {
 
-    /* HEADER უფრო კომპაქტური */
     .glass-header {
         padding: 8px 0;
     }
 
     .header-container {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: 6px;
-        position: relative; /* საჭიროა KA-ს სწორად დასაჯდომად */
-    }
-
-    /* ლოგო */
-    .header-logo {
-        padding-left: 0;
-        align-self: flex-start;
-        margin-left: 16px;
+        padding: 0 14px;
+        position: relative;
     }
 
     .header-logo span {
-        font-size: 20px;  /* პატარა ლოგოს ზომა */
+        font-size: 20px;
         text-shadow: 
             0 0 3px rgba(255,255,255,0.35),
-            0 0 6px rgba(0,121,255,0.45); 
-        position: relative;
-        overflow: hidden;
+            0 0 6px rgba(0,121,255,0.45);
     }
 
-    /* Shine ეფექტის შემცირებული ვერსია */
-    .header-logo span::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -120%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            120deg,
-            transparent,
-            rgba(255,255,255,0.25),
-            transparent
-        );
-        animation: shine 2.2s infinite;
-    }
-
-    /* ენების ჩამოსაშლელი – ზედა მარჯვენა */
     .lang-dropdown {
         position: absolute;
         right: 15px;
-        top: 8px;
-        margin-right: 0;
+        top: 10px;
     }
 
-    /* ნავიგაცია – ლამაზად ცენტრში */
     .header-nav {
-        margin-top: 6px;
-        order: 2;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
-        padding: 0 8px;
+        margin-top: 50px;
     }
 
     .header-nav a {
@@ -322,30 +293,23 @@ footer {
         border-radius: 20px;
     }
 
-    /* HERO */
+    .hero {
+        padding-top: 140px;  /* გადმოწევს ტექსტს, აღარ იქნება გადაფარვა */
+    }
+
     .hero h1 {
         font-size: 26px;
     }
 
     .hero p {
         font-size: 15px;
-        margin-top: 10px;
     }
 
-    /* SECTION ტექსტი */
     .section {
         padding: 40px 0;
     }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    .btn {
-        padding: 10px 16px;
-        font-size: 14px;
-    }
 }
+
 
 
 

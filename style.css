@@ -250,92 +250,90 @@ footer {
     margin-top: 40px;
 }
 
+/* ============================
+   MOBILE REPAIR (max-width: 768px)
+   ============================ */
 @media (max-width: 768px) {
 
-    /* HEADER – კომპაქტური, ზედა ზოლად */
+    /* HEADER */
     .glass-header {
-        padding: 10px 0;
+        padding: 6px 0;
     }
 
     .header-container {
-        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 14px;
+        padding: 0 12px;
     }
 
-    /* ლოგო – ცოტა პატარა და მშვიდი გლოუ */
     .header-logo span {
-        font-size: 20px;
+        font-size: 18px;
         text-shadow:
-            0 0 3px rgba(255,255,255,0.35),
-            0 0 6px rgba(0,121,255,0.35);
+            0 0 2px rgba(255,255,255,0.25),
+            0 0 4px rgba(0,121,255,0.25);
     }
 
-    /* ენის ჩამოსაშლელი – ზედა მარჯვენა კუთხეში */
+    /* ენის menu */
     .lang-dropdown {
-        position: static;   /* აღარ ვაბამ absolute-ს */
-        margin-left: 12px;
+        margin-left: 8px;
     }
 
     .lang-btn {
-        padding: 4px 10px;
+        padding: 3px 8px;
+        font-size: 13px;
     }
 
-    /* მენიუ – პატარა, аккурат ღილაკები, არა გიგანტური პილები */
+    /* NAV — აღარ არის გადმოკიდებული, ხდება NORMAL FLOW */
     .header-nav {
-        position: absolute;
-        left: 0;
-        bottom: -42px;      /* header-ის ქვემოთ გამოჩნდეს */
+        position: relative;
         width: 100%;
-        display: flex;
         justify-content: center;
+        margin-top: 8px;
         flex-wrap: wrap;
         gap: 6px;
-        padding: 0 8px;
     }
 
     .header-nav a {
-        font-size: 13px;
-        padding: 5px 10px;
-        border-radius: 999px;
-        background: rgba(0,0,0,0.25);   /* უფრო პატარა, დაბალი გლასი */
+        font-size: 12px;
+        padding: 5px 12px;
+        border-radius: 14px;
+        background: rgba(0,0,0,0.25);
         backdrop-filter: blur(4px);
     }
 
-    .header-nav a:hover {
-        background: rgba(255,255,255,0.3);
-    }
-
-    /* HERO – ოდნავ ქვემოთ დაწყება, რომ header/მენიუსგან თავი ჰქონდეს */
+    /* HERO — ნაკლები ზედა ადგილი */
     .hero {
-        padding-top: 140px;
+        padding-top: 80px;
+        text-align: center;
     }
 
     .hero h1 {
-        font-size: 26px;
+        font-size: 22px;
+        line-height: 1.25;
     }
 
     .hero p {
-        font-size: 15px;
-        margin-top: 10px;
+        font-size: 14px;
+        margin-top: 8px;
     }
 
-    /* სექციები, ტექსტები */
+    /* SECTION */
     .section {
-        padding: 40px 0;
+        padding: 32px 0;
     }
 
     h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .btn {
-        padding: 10px 16px;
+        padding: 9px 14px;
         font-size: 14px;
     }
 }
+
+
 
 
 

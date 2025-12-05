@@ -269,16 +269,38 @@ footer {
     }
 
     .header-logo span {
-        font-size: 22px;
+        font-size: 20px;  /* პატარა ლოგოს ზომა */
+        text-shadow: 
+            0 0 3px rgba(255,255,255,0.35),
+            0 0 6px rgba(0,121,255,0.45);   /* შემცირებული glow */
+        position: relative;
+        overflow: hidden;
     }
 
-    /* ენების ჩამოსაშლელი – ზედა მარჯვენა კუთხეში */
+    /* Shine ეფექტის შემცირებული ვარიანტი */
+    .header-logo span::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -120%;
+        width: 100%;          /* ნაკლები სიგანე, აღარ ფარავს მთელს ლოგოს */
+        height: 100%;
+        background: linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.25),   /* 40%-ით უფრო სუსტი shine */
+            transparent
+        );
+        animation: shine 2.2s infinite;
+    }
+
+    /* ენების ჩამოსაშლელი */
     .lang-dropdown {
         align-self: flex-end;
         margin-right: 16px;
     }
 
-    /* ნავიგაცია – ლამაზად ცენტრში, პატარა პილები */
+    /* ნავიგაცია – ცენტრში, პატარა პილები */
     .header-nav {
         order: 2;
         display: flex;
@@ -294,7 +316,7 @@ footer {
         border-radius: 20px;
     }
 
-    /* HERO ტექსტი – ტელეფონზე პატარა, მაგრამ მკაფიო */
+    /* HERO */
     .hero h1 {
         font-size: 26px;
     }
@@ -304,7 +326,7 @@ footer {
         margin-top: 10px;
     }
 
-    /* სექციების შიგთავსი */
+    /* SECTION ტექსტი */
     .section {
         padding: 40px 0;
     }
@@ -318,5 +340,6 @@ footer {
         font-size: 14px;
     }
 }
+
 
 

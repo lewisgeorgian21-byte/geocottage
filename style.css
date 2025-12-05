@@ -264,6 +264,7 @@ footer {
         overflow: hidden; /* გახსნილი მენიუს დროს scroll არ იაროს */
     }
 
+    /* HEADER */
     .glass-header {
         position: fixed;
         top: 0;
@@ -280,7 +281,6 @@ footer {
         justify-content: space-between;
         padding: 0 14px;
         position: relative;
-        z-index: 40;
     }
 
     .header-logo span {
@@ -290,7 +290,7 @@ footer {
             0 0 4px rgba(0,0,0,0.6);
     }
 
-    /* ჰამბურგერი – logo-ს მარჯვნივ */
+    /* ჰამბურგერი */
     .burger {
         display: flex;
         flex-direction: column;
@@ -302,6 +302,7 @@ footer {
         background: transparent;
         padding: 0;
         cursor: pointer;
+        z-index: 40;
     }
 
     .burger span {
@@ -313,7 +314,6 @@ footer {
         transition: transform 0.25s ease, opacity 0.25s ease;
     }
 
-    /* გახსნილი მდგომარეობა – ჯვარი */
     .burger.is-open span:nth-child(1) {
         transform: translateY(4px) rotate(45deg);
     }
@@ -321,19 +321,21 @@ footer {
         transform: translateY(-4px) rotate(-45deg);
     }
 
-    /* desktop nav აღარ ჩანს */
+    /* FULLSCREEN NAV */
     .header-nav {
         position: fixed;
         inset: 0;
         background: #ffffff;
-        padding: 80px 24px 80px;
-        display: flex;
+        padding: 80px 24px 40px;
+        display: none;              /* აქედან იწყება პრობლემა – default none */
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease;
         z-index: 35;
+    }
+
+    .header-nav.is-open {
+        display: flex;              /* ბურგერზე დაჭერით ჩართვა */
     }
 
     .header-nav a {
@@ -341,35 +343,27 @@ footer {
         font-weight: 500;
         color: #001b3c;
         text-decoration: none;
-        background: none;
         padding: 0;
+        background: none;
         border-radius: 0;
     }
 
-    .header-nav.is-open {
-        transform: translateY(0);
-    }
-
-    /* ენის შეცვლა – მენიუს ქვედა ნაწილში */
+    /* ენის dropdown – HEADER-ში, არა ქვემოთ */
     .lang-dropdown {
-        position: fixed;
-        bottom: 24px;
-        left: 24px;
+        position: absolute;
+        top: 56px;
         right: 24px;
-        display: flex;
-        justify-content: flex-start;
-        z-index: 36;
+        z-index: 41;
     }
 
     .lang-btn {
-        width: auto;
-        padding: 8px 14px;
+        padding: 6px 12px;
         font-size: 14px;
     }
 
-    /* HERO – ცოტა ქვემოთ რომ დაიწყოს */
+    /* HERO ქვემოთ დაიწიოს, რომ fixed-header არ გადაეფაროს */
     .hero {
-        padding-top: 140px;
+        padding-top: 150px;
         text-align: center;
     }
 
@@ -396,6 +390,7 @@ footer {
         font-size: 14px;
     }
 }
+
 
 
 

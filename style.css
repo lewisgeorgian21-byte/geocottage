@@ -261,7 +261,7 @@ footer {
 @media (max-width: 768px) {
 
     body.nav-open {
-        overflow: hidden; /* გახსნილი მენიუს დროს scroll არ იაროს */
+        overflow: hidden;
     }
 
     /* HEADER */
@@ -273,6 +273,12 @@ footer {
         z-index: 30;
         background: transparent;
         padding: 8px 0;
+        transition: background 0.25s ease;
+    }
+
+    /* როცა მენიუ არის გახსნილი — header თეთრდება */
+    body.nav-open .glass-header {
+        background: #ffffff;
     }
 
     .header-container {
@@ -288,7 +294,14 @@ footer {
         text-shadow:
             0 0 2px rgba(0,0,0,0.4),
             0 0 4px rgba(0,0,0,0.6);
-        color: #ffffff; /* ლოგო ისევ თეთრი */
+        color: #ffffff;
+        transition: color 0.25s ease;
+    }
+
+    /* როცა მენიუ იხსნება ლოგო ხდება მუქ ლურჯი */
+    body.nav-open .header-logo span {
+        color: #001B3C;
+        text-shadow: none;
     }
 
     /* ჰამბურგერი */
@@ -312,16 +325,19 @@ footer {
         height: 2px;
         border-radius: 999px;
         background: #ffffff;
-        transition: transform 0.25s ease, opacity 0.25s ease;
+        transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+    }
+
+    /* როცა მენიუ იხსნება — ხაზები ხდება მუქი ლურჯი */
+    body.nav-open .burger span {
+        background: #001B3C;
     }
 
     .burger.is-open span:nth-child(1) {
         transform: translateY(4px) rotate(45deg);
-        background: #001B3C; /* გახსნისას ლურჯად გადაიქცევა */
     }
     .burger.is-open span:nth-child(2) {
         transform: translateY(-4px) rotate(-45deg);
-        background: #001B3C;
     }
 
     /* FULLSCREEN NAV */
@@ -335,13 +351,14 @@ footer {
         align-items: flex-start;
         gap: 24px;
         z-index: 35;
+        transition: 0.25s ease;
     }
 
     .header-nav.is-open {
         display: flex;
     }
 
-    /* მენიუს ტექსტები – მუქ ლურჯი */
+    /* მენიუს ბმულები */
     .header-nav a {
         font-size: 22px;
         font-weight: 600;
@@ -356,7 +373,7 @@ footer {
         color: #003b88;
     }
 
-    /* ენის dropdown */
+    /* ენის dropdown — გახსნილი მენიუს თავთან */
     .lang-dropdown {
         position: absolute;
         top: 56px;
@@ -364,7 +381,6 @@ footer {
         z-index: 41;
     }
 
-    /* ენის ღილაკიც მუქ ლურჯი */
     .lang-btn {
         padding: 6px 12px;
         font-size: 14px;
@@ -410,6 +426,8 @@ footer {
         color: #ffffff;
     }
 }
+
+
 
 
 

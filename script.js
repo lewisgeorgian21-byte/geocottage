@@ -89,29 +89,60 @@ function setLanguage(lang) {
   });
 
   localStorage.setItem("site-language", lang);
-  document.querySelector(".lang-btn").textContent = lang.toUpperCase() + " ▾";
+  const langBtn = document.querySelector(".lang-btn");
+  if (langBtn) {
+    langBtn.textContent = lang.toUpperCase() + " ▾";
+  }
 }
 
-document.querySelector(".lang-btn").addEventListener("click", () => {
-  document.querySelector(".lang-list").classList.toggle("show");
-});
-
-document.querySelectorAll(".lang-list li").forEach(li => {
-  li.addEventListener("click", () => {
-    setLanguage(li.dataset.lang);
-    document.querySelector(".lang-list").classList.remove("show");
-  });
-});
-
-document.addEventListener("click", e => {
-  if (!document.querySelector(".lang-dropdown").contains(e.target)) {
-    document.querySelector(".lang-list").classList.remove("show");
-  }
-});
-
-// Load saved language
 document.addEventListener("DOMContentLoaded", () => {
+  // ენა
   setLanguage(localStorage.getItem("site-language") || "ka");
+
+  const langBtn = document.querySelector(".lang-btn");
+  const langList = document.querySelector(".lang-list");
+  const langDropdown = document.querySelector(".lang-dropdown");
+
+  if (langBtn && langList && langDropdown) {
+    langBtn.addEventListener("click", () => {
+      langList.classList.toggle("show");
+    });
+
+    langList.querySelectorAll("li").forEach(li => {
+      li.addEventListener("click", () => {
+        setLanguage(li.dataset.lang);
+        langList.classList.remove("show");
+      });
+    });
+
+    document.addEventListener("click", e => {
+      if (!langDropdown.contains(e.target)) {
+        langList.classList.remove("show");
+      }
+    });
+  }
+
+  // =============================
+  // MOBILE BURGER MENU
+  // =============================
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".header-nav");
+
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("is-open");
+      nav.classList.toggle("is-open");
+      document.body.classList.toggle("nav-open");
+    });
+
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        burger.classList.remove("is-open");
+        nav.classList.remove("is-open");
+        document.body.classList.remove("nav-open");
+      });
+    });
+  }
 });
 
 
@@ -120,6 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
 // =============================
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".glass-header");
+  if (!header) return;
+
   if (window.scrollY > 80) header.classList.add("scrolled");
   else header.classList.remove("scrolled");
 });

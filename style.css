@@ -252,49 +252,65 @@ footer {
 
 @media (max-width: 768px) {
 
+    /* HEADER – კომპაქტური, ზედა ზოლად */
     .glass-header {
-        padding: 8px 0;
+        padding: 10px 0;
     }
 
     .header-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 14px;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 14px;
     }
 
+    /* ლოგო – ცოტა პატარა და მშვიდი გლოუ */
     .header-logo span {
         font-size: 20px;
-        text-shadow: 
+        text-shadow:
             0 0 3px rgba(255,255,255,0.35),
-            0 0 6px rgba(0,121,255,0.45);
+            0 0 6px rgba(0,121,255,0.35);
     }
 
+    /* ენის ჩამოსაშლელი – ზედა მარჯვენა კუთხეში */
     .lang-dropdown {
-        position: absolute;
-        right: 15px;
-        top: 10px;
+        position: static;   /* აღარ ვაბამ absolute-ს */
+        margin-left: 12px;
     }
 
+    .lang-btn {
+        padding: 4px 10px;
+    }
+
+    /* მენიუ – პატარა, аккурат ღილაკები, არა გიგანტური პილები */
     .header-nav {
+        position: absolute;
+        left: 0;
+        bottom: -42px;      /* header-ის ქვემოთ გამოჩნდეს */
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
-        margin-top: 50px;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 0 8px;
     }
 
     .header-nav a {
-        font-size: 14px;
-        padding: 6px 14px;
-        border-radius: 20px;
+        font-size: 13px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        background: rgba(0,0,0,0.25);   /* უფრო პატარა, დაბალი გლასი */
+        backdrop-filter: blur(4px);
     }
 
+    .header-nav a:hover {
+        background: rgba(255,255,255,0.3);
+    }
+
+    /* HERO – ოდნავ ქვემოთ დაწყება, რომ header/მენიუსგან თავი ჰქონდეს */
     .hero {
-        padding-top: 140px;  /* გადმოწევს ტექსტს, აღარ იქნება გადაფარვა */
+        padding-top: 140px;
     }
 
     .hero h1 {
@@ -303,12 +319,25 @@ footer {
 
     .hero p {
         font-size: 15px;
+        margin-top: 10px;
     }
 
+    /* სექციები, ტექსტები */
     .section {
         padding: 40px 0;
     }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
 }
+
+
 
 
 

@@ -1,0 +1,307 @@
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans Georgian", sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   PREMIUM HEADER
+=========================== */
+.glass-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    padding: 14px 0;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-header.scrolled {
+    position: fixed;
+    background: rgba(20, 20, 20, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* NAVIGATION */
+/* LOGO POSITION */
+.header-logo {
+    padding-left: 25px; /* ლამაზად, რბილად გადაადგილება */
+}
+
+/* LOGO TEXT */
+
+
+/* Shine animation */
+.header-logo span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    0% { left: -120%; }
+    60% { left: 120%; }
+    100% { left: 120%; }
+}
+
+
+
+.header-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* PREMIUM NAVIGATION BUTTONS */
+.header-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px; /* შეგიძლია 17–18px თუ გინდა ოდნავ დიდი */
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 25px;  /* pill shape */
+
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.header-nav a:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    transform: translateY(-2px); /* slight lift on hover */
+}
+
+
+/* ===========================
+   LANGUAGE DROPDOWN
+=========================== */
+.lang-dropdown {
+    position: relative;
+    margin-right: 10px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 28px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.lang-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.lang-list li {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.lang-list li:hover {
+    background: #0d47a1;
+    color: white;
+}
+
+.show { display: block !important; }
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    height: 100vh;
+    background-image: url("image/background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero .container {
+    position: relative;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+.section {
+    padding: 70px 0;
+    background: white;
+}
+
+.section.light {
+    background: #f5f7fa;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0d47a1;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0d47a1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #1565c0; /* ოდნავ უფრო ღია ლურჯი */
+    transform: translateY(-3px); /* ოდნავ მიაწევს ზევით */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* ლამაზი ჩრდილი */
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    /* NAVIGATION → გადამტან მობილურისთვის */
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .header-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-nav a {
+        font-size: 14px;
+        padding: 6px 14px;
+        border-radius: 20px;
+    }
+
+    /* LANGUAGE SELECT */
+    .lang-dropdown {
+        margin-right: 0;
+    }
+
+    /* LOGO */
+    .header-logo span {
+        font-size: 22px;
+    }
+
+    /* SECTION PADDING */
+    .section {
+        padding: 40px 0;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}

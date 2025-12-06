@@ -437,8 +437,8 @@ footer {
 
 /* Desktop logo size */
 .top-logo {
-    height: 42px;
-    width: 42px;
+    height: 48px;
+    width: 78px;
     border-radius: 50%; /* makes it perfectly round */
     object-fit: cover;  /* keeps the image cropped beautifully */
 }
@@ -602,6 +602,7 @@ footer {
         background: transparent; /* optional */
     }
 }
+
 
 
 

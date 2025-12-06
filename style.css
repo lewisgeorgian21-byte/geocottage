@@ -473,6 +473,30 @@ footer {
 
 
 
+/* ===========================
+   MOBILE MENU — LOGO AT BOTTOM
+=========================== */
+@media (max-width: 768px) {
+
+    /* ლოგო გამოჩნდება მენიუს ქვედა ნაწილში */
+    .mobile-menu-logo {
+        position: absolute;
+        bottom: 40px;        /* ჩამოწევა ქვემოდან */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90px;         /* ლოგოს ზომა */
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        opacity: 0.9;
+    }
+
+    /* მენიუს wrapper უნდა იყოს relative */
+    .header-nav.is-open {
+        position: relative;
+    }
+}
+
 
 
 

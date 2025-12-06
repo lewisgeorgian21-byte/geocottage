@@ -522,12 +522,14 @@ footer {
 
 .contact-box {
     max-width: 650px;
-    margin: 0 auto; /* ცენტრში გასწორება */
+    margin-left: 0;       /* მარცხნივ დგას */
+    margin-right: auto;   /* არ გადადის შუაში */
     padding: 25px 35px;
     background: #ffffff;
     border-radius: 14px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
+
 
 .contact-box h2 {
     text-align: left;
@@ -557,6 +559,7 @@ footer {
         gap: 6px;
     }
 }
+
 
 
 

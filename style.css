@@ -168,7 +168,7 @@ body {
 =========================== */
 .hero {
     height: 100vh;
-    background-image: url("image/background.jpg");
+    background-image: url("image/bg.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -602,6 +602,7 @@ footer {
         background: transparent; /* optional */
     }
 }
+
 
 
 

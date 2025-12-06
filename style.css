@@ -443,13 +443,35 @@ footer {
     object-fit: cover;  /* keeps the image cropped beautifully */
 }
 
-/* Mobile version */
+/* ===========================
+   MOBILE HEADER FIXES
+=========================== */
 @media (max-width: 600px) {
+
+    /* ოდნავ ვზრდით header-ის ზედა სივრცეს */
+    .glass-header {
+        padding-top: 14px;  /* მეტი ჰაერი ზემოთ */
+        padding-bottom: 8px;
+    }
+
+    /* ვწევთ ლოგოს + ტექსტს მარჯვნივ */
+    .header-logo {
+        padding-left: 10px; /* მარცხნივ აღარ ეკრობა */
+    }
+
+    /* ლოგოს ოდნავ ვადიდებთ */
     .top-logo {
-        height: 34px;
-        width: 34px;
+        height: 46px;
+        width: 46px;
+    }
+
+    /* GeoCottage ტექსტი აბალანსებს */
+    .header-logo span {
+        font-size: 21px;
     }
 }
+
+
 
 
 

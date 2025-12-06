@@ -428,28 +428,59 @@ footer {
 }
 
 
-/* Header logo container */
+/* -------------------- */
+/* Header General Fixes */
+/* -------------------- */
+
+/* Keeps the top header centered and not stretching weirdly */
+.glass-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Prevents header from expanding sideways */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;   /* keeps layout centered */
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+
+/* -------------------- */
+/* Logo + Text Layout   */
+/* -------------------- */
+
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 10px;  /* Distance between logo and text */
+    gap: 10px;
 }
 
-/* Desktop logo size */
 .top-logo {
     height: 42px;
     width: 42px;
-    border-radius: 50%;      /* makes it perfectly round */
-    object-fit: cover;       /* keeps the image cropped beautifully */
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* prevents logo from shrinking or breaking layout */
 }
 
-/* Mobile version */
+/* Mobile logo size */
 @media (max-width: 600px) {
     .top-logo {
         height: 34px;
         width: 34px;
     }
 }
+
 
 
 

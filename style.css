@@ -168,7 +168,7 @@ body {
 =========================== */
 .hero {
     height: 100vh;
-    background-image: url("image/background.jpg?v=2");
+    background-image: url("image/background.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -470,6 +470,7 @@ footer {
         font-size: 21px;
     }
 }
+
 
 
 

@@ -473,46 +473,34 @@ footer {
 
 
 /* CONTACT SECTION (BLUE VERSION) */
-.contact-box {
-    text-align: left;
-}
-
-.contact-subtitle {
-    font-size: 22px;
-    font-weight: 700;
-    margin-top: 10px;
-    color: #0d47a1; /* მთავარი ლურჯი */
-}
-
-.contact-types {
-    font-size: 16px;
-    margin-bottom: 25px;
-    color: #0d47a1; 
-}
-
-.contact-info p {
-    font-size: 16px;
-    margin: 10px 0;
+/* NEW CONTACT FIX */
+.contact-line {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #1a1a1a;
+    font-size: 17px;
 }
 
-.contact-info .icon {
+.contact-line a {
+    margin-left: 4px;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-line a:hover {
+    text-decoration: underline;
+}
+
+.phone-wrap {
+    display: flex;
+    gap: 12px;
+}
+
+.icon {
     font-size: 20px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .contact-subtitle {
-        font-size: 18px;
-    }
-
-    .contact-info p {
-        font-size: 15px;
-    }
-}
 
 /* CONTACT SECTION BEAUTIFY (DESKTOP + MOBILE FIX) */
 
@@ -559,6 +547,7 @@ footer {
         gap: 6px;
     }
 }
+
 
 
 

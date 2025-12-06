@@ -549,6 +549,35 @@ footer {
 }
 
 
+/* MOBILE FIX — CONTACT ALIGNMENT */
+@media (max-width: 600px) {
+
+    .contact-line {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap; /* 👉 ატეხს ახალ ხაზზე და აღარ გიყრის ტექსტს */
+        overflow: hidden; /* 👉 არარეალური სკროლი გაქრება */
+        line-height: 1.4;
+    }
+
+    .phone-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .contact-info a {
+        font-size: 15px;
+        white-space: nowrap; /* 👉 ტელეფონის ნომრები არ დაიშლება შუაში */
+    }
+
+    .whatsapp-note {
+        margin-left: 32px; /* ტელეფონის აიქონთან სწორად დასანუსხებლად */
+        font-size: 15px;
+    }
+}
+
 
 
 

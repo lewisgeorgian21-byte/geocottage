@@ -514,6 +514,51 @@ footer {
     }
 }
 
+/* CONTACT SECTION BEAUTIFY (DESKTOP + MOBILE FIX) */
+
+#contact {
+    padding: 60px 0;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: 0 auto; /* ცენტრში გასწორება */
+    padding: 25px 35px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.contact-box h2 {
+    text-align: left;
+}
+
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-info .icon {
+    font-size: 22px;
+}
+
+/* Mobile version upgrade */
+@media (max-width: 600px) {
+
+    .contact-box {
+        max-width: 92%;
+        padding: 18px 16px;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+        gap: 6px;
+    }
+}
+
+
 
 
 

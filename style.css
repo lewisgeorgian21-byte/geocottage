@@ -441,6 +441,7 @@ footer {
     top: 0;
     left: 0;
     z-index: 9999;
+    backdrop-filter: blur(12px);
 }
 
 /* Prevents header from expanding sideways */
@@ -462,24 +463,27 @@ footer {
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* little more balanced space */
 }
 
+/* Desktop logo size – bigger and beautiful */
 .top-logo {
-    height: 42px;
-    width: 42px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0; /* prevents logo from shrinking or breaking layout */
+    flex-shrink: 0;
 }
 
-/* Mobile logo size */
+/* Mobile logo size – not too small now */
 @media (max-width: 600px) {
     .top-logo {
-        height: 34px;
-        width: 34px;
+        height: 45px;
+        width: 45px;
     }
 }
+
+
 
 
 

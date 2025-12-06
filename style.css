@@ -456,32 +456,81 @@ footer {
 }
 
 
-/* -------------------- */
-/* Logo + Text Layout   */
-/* -------------------- */
+/* ===========================
+   CLEAN FIXED HEADER (FINAL)
+=========================== */
+
+.glass-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;   /* header height */
+}
+
+/* Main header inner wrapper */
+.header-container {
+    width: 100%;
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+/* ===========================
+   LOGO + BRAND TEXT
+=========================== */
 
 .header-logo {
     display: flex;
     align-items: center;
-    gap: 12px; /* little more balanced space */
+    gap: 12px;
 }
 
-/* Desktop logo size – bigger and beautiful */
 .top-logo {
-    height: 60px;
-    width: 60px;
+    height: 48px;
+    width: 48px;
     border-radius: 50%;
     object-fit: cover;
-    flex-shrink: 0;
 }
 
-/* Mobile logo size – not too small now */
+.header-logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* ===========================
+   MOBILE VERSION
+=========================== */
+
 @media (max-width: 600px) {
+
     .top-logo {
-        height: 45px;
-        width: 45px;
+        height: 38px;
+        width: 38px;
+    }
+
+    .header-logo span {
+        font-size: 20px;
+    }
+
+    .glass-header {
+        padding: 8px 0;
     }
 }
+
+
 
 
 

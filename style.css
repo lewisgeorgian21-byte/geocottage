@@ -519,8 +519,8 @@ footer {
 }
 
 
-.contact-box h2 {
-    text-align: left;
+.contact-box {
+    margin-left: 60px;  /* მარჯვნივ წაწევა */
 }
 
 .contact-info p {
@@ -590,6 +590,7 @@ footer {
         font-size: 15px;
     }
 }
+
 
 
 

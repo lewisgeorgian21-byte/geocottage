@@ -428,6 +428,29 @@ footer {
 }
 
 
+/* Header logo container */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;  /* Distance between logo and text */
+}
+
+/* Desktop logo size */
+.top-logo {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;      /* makes it perfectly round */
+    object-fit: cover;       /* keeps the image cropped beautifully */
+}
+
+/* Mobile version */
+@media (max-width: 600px) {
+    .top-logo {
+        height: 34px;
+        width: 34px;
+    }
+}
+
 
 
 

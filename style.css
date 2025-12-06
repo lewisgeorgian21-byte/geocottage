@@ -428,6 +428,24 @@ footer {
 }
 
 
+.logo-box {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.logo-box img {
+    width: 160px;
+    height: auto;
+    opacity: 0.95;
+    transition: 0.3s ease;
+}
+
+.logo-box img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
 
 
 

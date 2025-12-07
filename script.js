@@ -176,7 +176,9 @@ closeBtn.addEventListener('click', () => {
 });
 
 
-
+// =============================
+//  SNOW EFFECT
+// =============================
 
 function createSnowflake() {
     const snowflake = document.createElement("div");
@@ -195,6 +197,7 @@ function createSnowflake() {
 }
 
 setInterval(createSnowflake, 150);
+
 
 
 

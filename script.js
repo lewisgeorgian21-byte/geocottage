@@ -178,10 +178,11 @@ closeBtn.addEventListener('click', () => {
 
 
 /* ===========================================
-   ❄️ საახალწლო თოვლის ეფექტი (Snowfall Effect)
-   დამატებულია დროებით — ახალი წლის შემდეგ 
-   მარტივად შეგიძლიათ წაშალოთ ან გამორთოთ.
+   საახალწლო თოვლის ეფექტი (Snowfall Effect)
+   დროებით დამატებული — ახალი წლის შემდეგ
+   შეგიძლიათ წაშალოთ ან გათიშოთ.
 =========================================== */
+
 
 function createSnowflake() {
     const snowflake = document.createElement("div");
@@ -200,5 +201,6 @@ function createSnowflake() {
 }
 
 setInterval(createSnowflake, 150);
+
 
 

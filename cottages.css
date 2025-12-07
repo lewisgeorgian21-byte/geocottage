@@ -1,0 +1,51 @@
+.cottages-section {
+    padding: 70px 0;
+    background: #f7f7f7;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+}
+
+.cottages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+}
+
+.cottage-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.cottage-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.cottage-card h3 {
+    margin: 15px 0 8px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.cottage-card p {
+    padding: 0 16px 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+.cottage-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}

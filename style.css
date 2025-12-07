@@ -1,0 +1,642 @@
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans Georgian", sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   PREMIUM HEADER
+=========================== */
+.glass-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    padding: 14px 0;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-header.scrolled {
+    position: fixed;
+    background: rgba(20, 20, 20, 0.65);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-logo span {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* NAVIGATION */
+/* LOGO POSITION */
+.header-logo {
+    padding-left: 25px; /* ლამაზად, რბილად გადაადგილება */
+}
+
+/* LOGO TEXT */
+
+
+/* Shine animation */
+.header-logo span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.7),
+        transparent
+    );
+    animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+    0% { left: -120%; }
+    60% { left: 120%; }
+    100% { left: 120%; }
+}
+
+
+
+.header-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* PREMIUM NAVIGATION BUTTONS */
+.header-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px; /* შეგიძლია 17–18px თუ გინდა ოდნავ დიდი */
+    font-weight: 500;
+
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 25px;  /* pill shape */
+
+    backdrop-filter: blur(6px);
+    transition: 0.3s ease;
+}
+
+.header-nav a:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    transform: translateY(-2px); /* slight lift on hover */
+}
+
+
+/* ===========================
+   LANGUAGE DROPDOWN
+=========================== */
+.lang-dropdown {
+    position: relative;
+    margin-right: 10px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 28px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.lang-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.lang-list li {
+    padding: 10px 16px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.lang-list li:hover {
+    background: #0d47a1;
+    color: white;
+}
+
+.show { display: block !important; }
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    height: 100vh;
+    background-image: url("image/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.hero .container {
+    position: relative;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+.section {
+    padding: 70px 0;
+    background: white;
+}
+
+.section.light {
+    background: #f5f7fa;
+}
+
+h2 {
+    font-size: 28px;
+    color: #0d47a1;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0d47a1;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #1565c0; /* ოდნავ უფრო ღია ლურჯი */
+    transform: translateY(-3px); /* ოდნავ მიაწევს ზევით */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* ლამაზი ჩრდილი */
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background: #0d47a1;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* ჰამბურგერი default-ად დამალულია desktop-ზე */
+.burger {
+    display: none;
+}
+
+/* ============================
+   MOBILE (max-width: 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+    body.nav-open {
+        overflow: hidden;
+    }
+
+    /* HEADER */
+    .glass-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 30;
+        background: transparent;
+        padding: 8px 0;
+        transition: background 0.25s ease;
+    }
+
+    /* როცა მენიუ არის გახსნილი — header თეთრდება */
+    body.nav-open .glass-header {
+        background: #ffffff;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 14px;
+        position: relative;
+    }
+
+    .header-logo span {
+        font-size: 20px;
+        text-shadow:
+            0 0 2px rgba(0,0,0,0.4),
+            0 0 4px rgba(0,0,0,0.6);
+        color: #ffffff;
+        transition: color 0.25s ease;
+    }
+
+    /* როცა მენიუ იხსნება ლოგო ხდება მუქ ლურჯი */
+    body.nav-open .header-logo span {
+        color: #001B3C;
+        text-shadow: none;
+    }
+
+    /* ჰამბურგერი */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        z-index: 40;
+    }
+
+    .burger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        border-radius: 999px;
+        background: #ffffff;
+        transition: transform 0.25s ease, opacity 0.25s ease, background 0.25s ease;
+    }
+
+    /* როცა მენიუ იხსნება — ხაზები ხდება მუქი ლურჯი */
+    body.nav-open .burger span {
+        background: #001B3C;
+    }
+
+    .burger.is-open span:nth-child(1) {
+        transform: translateY(4px) rotate(45deg);
+    }
+    .burger.is-open span:nth-child(2) {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+
+    /* FULLSCREEN NAV */
+    .header-nav {
+        position: fixed;
+        inset: 0;
+        background: #ffffff;
+        padding: 80px 24px 40px;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        z-index: 35;
+        transition: 0.25s ease;
+    }
+
+    .header-nav.is-open {
+        display: flex;
+    }
+
+    /* მენიუს ბმულები */
+    .header-nav a {
+        font-size: 22px;
+        font-weight: 600;
+        color: #001B3C !important;
+        text-decoration: none;
+        padding: 0;
+        background: none;
+        border-radius: 0;
+    }
+
+    .header-nav a:hover {
+        color: #003b88;
+    }
+
+    /* ენის dropdown — გახსნილი მენიუს თავთან */
+    .lang-dropdown {
+        position: absolute;
+        top: 56px;
+        right: 24px;
+        z-index: 41;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 14px;
+        color: #001B3C;
+        background: #ffffff;
+        border: 1px solid #001B3C;
+        border-radius: 8px;
+    }
+
+    .lang-list li {
+        color: #001B3C;
+    }
+
+    /* HERO ქვემოთ დაიწიოს */
+    .hero {
+        padding-top: 150px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .hero p {
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .section {
+        padding: 32px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+        color: #001B3C;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+        background: #001B3C;
+        color: #ffffff;
+    }
+}
+
+
+/* Header logo container */
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Distance between logo and text */
+}
+
+/* Desktop logo size */
+.top-logo {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%; /* makes it perfectly round */
+    object-fit: cover;  /* keeps the image cropped beautifully */
+}
+
+/* ===========================
+   MOBILE HEADER FIXES
+=========================== */
+@media (max-width: 600px) {
+
+    /* ოდნავ ვზრდით header-ის ზედა სივრცეს */
+    .glass-header {
+        padding-top: 14px;  /* მეტი ჰაერი ზემოთ */
+        padding-bottom: 8px;
+    }
+
+    /* ვწევთ ლოგოს + ტექსტს მარჯვნივ */
+    .header-logo {
+        padding-left: 10px; /* მარცხნივ აღარ ეკრობა */
+    }
+
+    /* ლოგოს ოდნავ ვადიდებთ */
+    .top-logo {
+        height: 60px;
+        width: 60px;
+    }
+
+    /* GeoCottage ტექსტი აბალანსებს */
+    .header-logo span {
+        font-size: 21px;
+    }
+}
+
+
+/* CONTACT SECTION (BLUE VERSION) */
+/* NEW CONTACT FIX */
+.contact-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+}
+
+.contact-line a {
+    margin-left: 4px;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-line a:hover {
+    text-decoration: underline;
+}
+
+.phone-wrap {
+    display: flex;
+    gap: 12px;
+}
+
+.icon {
+    font-size: 20px;
+}
+
+
+/* CONTACT SECTION BEAUTIFY (DESKTOP + MOBILE FIX) */
+
+#contact {
+    padding: 60px 0;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin-left: 0;       /* მარცხნივ დგას */
+    margin-right: auto;   /* არ გადადის შუაში */
+    padding: 25px 35px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+
+.contact-box {
+    margin-left: 40px;  /* მარჯვნივ წაწევა */
+}
+
+.contact-info p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contact-info .icon {
+    font-size: 22px;
+}
+
+/* Mobile version upgrade */
+@media (max-width: 600px) {
+
+    .contact-box {
+        max-width: 92%;
+        padding: 18px 16px;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .contact-info p {
+        font-size: 15px;
+        gap: 6px;
+    }
+}
+
+
+/* FINAL MOBILE CONTACT FIX */
+@media (max-width: 600px) {
+
+    .contact-line {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 4px;
+        overflow: hidden;
+    }
+
+    /* WhatsApp row behaves better */
+    .contact-line.whatsapp-row {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contact-line.whatsapp-row .icon {
+        flex-shrink: 0;
+    }
+
+    .whatsapp-note {
+        margin: 0;
+        padding: 0;
+        font-size: 15px;
+    }
+
+    /* Phone numbers do not stretch outside */
+    .phone-wrap {
+        display: flex;
+        flex-direction: column; /* ← ტელეფონები დალაგდება ვერტიკალურად, აღარ გასდის */
+        width: 100%;
+        gap: 4px;
+    }
+
+    .phone-wrap a {
+        white-space: nowrap;
+        font-size: 15px;
+    }
+}
+
+/* MOBILE — contact box should touch the left side */
+@media (max-width: 768px) {
+    .contact-box {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 12px;   /* optional — რომ ტექსტი არ მიედოს კიდეს */
+        padding-right: 12px;
+        box-shadow: none;     /* optional, თუ გინდა გათანაბრება სხვა ბლოკებთან */
+        background: transparent; /* optional */
+    }
+}
+
+
+/* FIX: All text sections should have same width and left alignment */
+.text-block {
+    width: 100%;
+    max-width: 820px;   /* ← ზუსტად შენი მონიტორის სიგანესთან ახლოს */
+    margin-left: 40px;  /* ← ზუსტად ის დისტანცია, რაც screenshot-ში გაქვს */
+    margin-right: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Desktop layout fix */
+@media (min-width: 769px) {
+    .text-block {
+        width: 100%;
+        max-width: 820px;
+        margin-left: 40px;
+        margin-right: 0;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+}
+
+/* Mobile layout resets */
+@media (max-width: 768px) {
+    .text-block {
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+
+
+

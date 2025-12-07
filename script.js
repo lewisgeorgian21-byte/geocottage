@@ -158,3 +158,20 @@ window.addEventListener("scroll", () => {
   else header.classList.remove("scrolled");
 });
 
+
+const images = document.querySelectorAll('.cottage-card img');
+const viewer = document.getElementById('img-viewer');
+const viewerImg = document.getElementById('viewer-img');
+const closeBtn = document.querySelector('.close-btn');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        viewer.style.display = 'flex';
+       viewerImg.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    viewer.style.display = 'none';
+});
+

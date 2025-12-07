@@ -175,8 +175,11 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start; /* ← მარცხენა განლაგება */
+    text-align: left;            /* ← ტექსტიც მარცხნივ */
+
+    padding-left: 60px;          /* ← რომ ეკრანის კიდეს არ მიეკრას */
+    padding-right: 20px;
 }
 
 .hero::before {
@@ -189,11 +192,13 @@ body {
 .hero .container {
     position: relative;
     color: #fff;
+    max-width: 700px;           /* ← ტექსტი აღარ გადაიფანტება დიდ ეკრანზე */
 }
 
 .hero h1 {
     font-size: 48px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero p {
@@ -201,6 +206,7 @@ body {
     font-size: 20px;
     opacity: 0.95;
 }
+
 
 /* ===========================
    SECTIONS
@@ -461,8 +467,8 @@ footer {
 
     /* ლოგოს ოდნავ ვადიდებთ */
     .top-logo {
-        height: 60px;
-        width: 60px;
+        height: 46px;
+        width: 46px;
     }
 
     /* GeoCottage ტექსტი აბალანსებს */
@@ -602,5 +608,114 @@ footer {
         background: transparent; /* optional */
     }
 }
+
+
+/* ========== PROPERTY CARDS (COTTAGES PAGE) ========== */
+
+.gallery-title {
+    font-size: 28px;
+    color: #0d47a1;
+    margin-bottom: 30px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0d47a1;
+}
+
+.card p {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #333;
+}
+
+.card .btn {
+    background: #0d47a1;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+
+/* ===============================
+   FIX: Language dropdown on top
+=============================== */
+.lang-dropdown {
+    position: relative;
+    z-index: 9999;
+}
+
+.lang-list {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 10000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

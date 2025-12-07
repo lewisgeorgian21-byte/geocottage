@@ -604,6 +604,17 @@ footer {
 }
 
 
+/* FIX: All text sections should have same width and left alignment */
+.text-block {
+    width: 100%;
+    max-width: 820px;   /* ← ზუსტად შენი მონიტორის სიგანესთან ახლოს */
+    margin-left: 40px;  /* ← ზუსტად ის დისტანცია, რაც screenshot-ში გაქვს */
+    margin-right: 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+
 
 
 

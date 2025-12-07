@@ -184,25 +184,28 @@ if (images.length > 0 && viewer && viewerImg && closeBtn) {
 
 /* Snow Effect */
 
-document.addEventListener("DOMContentLoaded", () => {
-    setInterval(createSnowflake, 150);
-});
-
 function createSnowflake() {
     const snowflake = document.createElement("div");
     snowflake.classList.add("snowflake");
     snowflake.textContent = "❄";
 
     const width = document.documentElement.clientWidth || window.innerWidth;
+    const height = document.documentElement.clientHeight || window.innerHeight;
+
     snowflake.style.left = Math.random() * width + "px";
+    snowflake.style.top = "-10px";
 
     snowflake.style.fontSize = (10 + Math.random() * 20) + "px";
+
+    // გარანტია რომ ფიფქი ქრება მაშინვე როცა ეკრანს გასცდება
     snowflake.style.animationDuration = (4 + Math.random() * 6) + "s";
+    snowflake.style.transform = `translateY(${height}px)`;
 
     document.body.appendChild(snowflake);
 
-    setTimeout(() => snowflake.remove(), 8000);
+    setTimeout(() => snowflake.remove(), 7000);
 }
+
 
 
 

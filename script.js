@@ -176,9 +176,7 @@ closeBtn.addEventListener('click', () => {
 });
 
 
-// =============================
-//  SNOW EFFECT
-// =============================
+/* --- Snow Effect --- */
 
 function createSnowflake() {
     const snowflake = document.createElement("div");

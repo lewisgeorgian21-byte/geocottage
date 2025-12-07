@@ -175,8 +175,11 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start; /* ← მარცხენა განლაგება */
+    text-align: left;            /* ← ტექსტიც მარცხნივ */
+
+    padding-left: 60px;          /* ← რომ ეკრანის კიდეს არ მიეკრას */
+    padding-right: 20px;
 }
 
 .hero::before {
@@ -189,11 +192,13 @@ body {
 .hero .container {
     position: relative;
     color: #fff;
+    max-width: 700px;           /* ← ტექსტი აღარ გადაიფანტება დიდ ეკრანზე */
 }
 
 .hero h1 {
     font-size: 48px;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .hero p {
@@ -201,6 +206,7 @@ body {
     font-size: 20px;
     opacity: 0.95;
 }
+
 
 /* ===========================
    SECTIONS
@@ -602,6 +608,7 @@ footer {
         background: transparent; /* optional */
     }
 }
+
 
 
 

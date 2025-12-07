@@ -182,25 +182,24 @@ if (images.length > 0 && viewer && viewerImg && closeBtn) {
 
 
 
-/*** SNOW EFFECT ***/
 function createSnowflake() {
     const snowflake = document.createElement("div");
     snowflake.classList.add("snowflake");
     snowflake.textContent = "❄";
 
-    const width = window.innerWidth;
-    snowflake.style.left = Math.random() * width + "px";
+    snowflake.style.left = Math.random() * window.innerWidth + "px";
     snowflake.style.fontSize = (10 + Math.random() * 20) + "px";
     snowflake.style.animationDuration = (4 + Math.random() * 6) + "s";
 
     document.body.appendChild(snowflake);
 
-    setTimeout(() => snowflake.remove(), 8000);
+    setTimeout(() => {
+        snowflake.remove();
+    }, 8000);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    setInterval(createSnowflake, 150);
-});
+setInterval(createSnowflake, 150);
+
 
 
 

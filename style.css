@@ -666,6 +666,21 @@ footer {
 }
 
 
+/* ===============================
+   FIX: Language dropdown on top
+=============================== */
+.lang-dropdown {
+    position: relative;
+    z-index: 9999;
+}
+
+.lang-list {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 10000;
+}
+
 
 
 

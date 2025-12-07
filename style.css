@@ -604,21 +604,8 @@ footer {
 }
 
 
-/* BUY SECTION FIX — always left aligned, never centered */
-#buy .container {
-    margin-left: 60px !important;   /* ლამაზი შიდა სივრცე */
-    margin-right: auto !important;
-    text-align: left !important;
-    max-width: 900px;
-}
 
 
-#buy p,
-#buy ul,
-#buy li,
-#buy h2 {
-    text-align: left !important;
-}
 
 
 

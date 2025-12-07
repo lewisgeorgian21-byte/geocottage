@@ -164,16 +164,19 @@ const viewer = document.getElementById('img-viewer');
 const viewerImg = document.getElementById('viewer-img');
 const closeBtn = document.querySelector('.close-btn');
 
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        viewer.style.display = 'flex';
-       viewerImg.src = img.src;
+if (images.length > 0 && viewer && viewerImg && closeBtn) {
+    images.forEach(img => {
+        img.addEventListener('click', () => {
+            viewer.style.display = 'flex';
+            viewerImg.src = img.src;
+        });
     });
-});
 
-closeBtn.addEventListener('click', () => {
-    viewer.style.display = 'none';
-});
+    closeBtn.addEventListener('click', () => {
+        viewer.style.display = 'none';
+    });
+}
+
 
 
 /* Snow Effect */
@@ -197,6 +200,7 @@ function createSnowflake() {
         snowflake.remove();
     }, 8000);
 }
+
 
 
 

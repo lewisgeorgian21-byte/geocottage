@@ -84,10 +84,13 @@ const translations = {
 // LANGUAGE SWITCHER
 // =============================
 function setLanguage(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
+document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    el.innerHTML = translations[lang][key] || el.innerHTML;
-  });
+    if (translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+    }
+});
+
 
   localStorage.setItem("site-language", lang);
   const langBtn = document.querySelector(".lang-btn");
@@ -200,6 +203,7 @@ function createSnowflake() {
         snowflake.remove();
     }, 8000);
 }
+
 
 
 

@@ -193,15 +193,15 @@ function createSnowflake() {
     snowflake.classList.add("snowflake");
     snowflake.textContent = "❄";
 
-    snowflake.style.left = Math.random() * window.innerWidth + "px";
+    const width = document.documentElement.clientWidth || window.innerWidth;
+    snowflake.style.left = Math.random() * width + "px";
+
     snowflake.style.fontSize = (10 + Math.random() * 20) + "px";
     snowflake.style.animationDuration = (4 + Math.random() * 6) + "s";
 
     document.body.appendChild(snowflake);
 
-    setTimeout(() => {
-        snowflake.remove();
-    }, 8000);
+    setTimeout(() => snowflake.remove(), 8000);
 }
 
 

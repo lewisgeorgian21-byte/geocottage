@@ -604,3 +604,19 @@ footer {
 }
 
 
+/* BUY SECTION FIX — always left aligned, never centered */
+#buy .container {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    max-width: 900px; /* prevents text from being too wide */
+}
+
+
+#buy p,
+#buy ul,
+#buy li,
+#buy h2 {
+    text-align: left !important;
+}
+

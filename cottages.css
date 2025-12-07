@@ -21,31 +21,71 @@
 .cottage-card {
     background: #ffffff;
     border-radius: 14px;
-    overflow: hidden;
+    overflow: hidden; /* ფოტო რომ ბლოკს გარეთ არ გადმოვიდეს */
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     transition: 0.3s ease;
     text-align: center;
 }
 
+/* --- ფოტო --- */
 .cottage-card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
+    transition: transform 0.3s ease !important; /* ზუმის ანიმაცია */
 }
 
+.cottage-card img:hover {
+    transform: scale(1.08) !important; /* ფოტოს გადიდება */
+}
+
+/* --- სათაური --- */
 .cottage-card h3 {
     margin: 15px 0 8px;
     font-size: 22px;
     font-weight: 600;
 }
 
+/* --- ტექსტი --- */
 .cottage-card p {
     padding: 0 16px 20px;
     font-size: 15px;
     color: #555;
 }
 
+/* --- ბარათის hover ეფექტი --- */
 .cottage-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+
+
+
+
+.viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
